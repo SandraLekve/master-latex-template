@@ -103,4 +103,23 @@ Connectedness:
     If a network consists of two components, a properly placed single link can connect them, making the network connected. Such a link is called a bridge. In general a bridge is any links that, is cut, disconnects the network. BFS & ADJACENCY matrix 
     
 Clustering Coefficient 
-The clustering coefficient captures
+    The clustering coefficient captures the degree to wjich the neighbors of agiven node link to each other. For a node i with degree $k_{i}$ the local clustering coefficient is defined as
+    $C_i= \frac{2L_{i}}{k_{i}(k_{i}-1)}$
+    where $L_{i}$ represents the number of links between the $k_{i}$ neighbors of node i. Note that $C_{i}$ is between o and 1. 
+        Ci = 0 if none of the neighbors of node i link to each other.
+        Ci = 1 if the neighbors of node i form a complete graph, i.e. they all link to each other.
+        Ci is the probability that two neighbors of a node link to each other. Consequently C = 0.5 implies that there is a 50% chance that two neighbors of a node are linked.
+    the degree of clustering of a whole network is captured by the average clustering coefficient, representing the average of $C_{i}$ over all nodes
+        $\langel C \rangle = \frac{1}{N} \sum C_{i}$
+global clustering coefficient 
+
+The Scale-free Property #chapter4
+In a random network highly connected nodes, or hubs are effectively forbidden. In contrast in the www network numerous small-degree nodes coexist with an exceptionally large number of links. Hubs are in most real networks. They represent a signature of a deeper organizing principle that we call the scale-free property. We therefore explore the degree distribution of real networks, which allows us to uncorver and charaterize scale-free network. 
+
+Power Laws and Scale-Free Networks
+    random network - Poisson distribution 
+$p_{k} \ap \sim k^{-\gamma}$
+    Equation is called a power law distribution and the exponent $\gamma$ is its degree exponent. if we take a logarithm, we obtain $log p_{k} \ap \sim {-\gamma}log k$
+    log $p_{k}$ is expected to depend linearly on log k, the slope of this line being the degree exponent $\gamma$
+    
+A scale free network is a network whose degree distribution follows a power law.
