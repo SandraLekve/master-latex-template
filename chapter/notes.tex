@@ -1,0 +1,106 @@
+%https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
+
+Graph theory: 
+    Graph theory, the mathematical scaffold behind network science. 1735, Köningsberg. Euler's proof was the first time someone solved a mathematical problem using a graph. 
+
+Networks and Graphs: 
+    To understand a complex system, we first need to know how its components interact with each other.  In other words we need a maps of its wiring diagram. 
+
+Network: 
+    A network is a catalog of a system's components called nodes or vertices and the direct interactions between them, called links or edges. Network representation offers a common language to study systems that may differ greatly in nature, appearance, or scope. Different networks same graph. 
+    
+    Number of nodes, or N, represents the number of components in the system. We will call N the size of the network.
+    
+    Number of links, which we denote with L, represents teh total number of interactions between the nodes. We will not label the link, as they can be identified through the nodes they connect. 
+
+Directed or undirected : 
+    Links of networks can be directed or undirected. Some networks have direct links if one employee sends a email to another. Some have are undirected employees that work together. 
+
+Graph: 
+    In the scientific litterateur the terms network and graph are used interchangeably. There is a subtle distinction between the two terminologies \{ network, node, link \} refers th real systems. In contrast, we use the terms \{ graph, vertex, edge\} when we discuss the mathematical representation of these networks. This distinction is rarely made, so these two terminologies are often synonyms of each other.
+
+Tools network science: 
+
+Degree, Average Degree and Degree Distribution: 
+
+Degree: 
+    A key property of each node is its degree, representing the number of links it has to other nodes. 
+        We denote with $k_{i}$ the degree of the $i^{th}$ node in the network.
+    In a undirected network the total number of links, L, 
+    $L=  \frac{1}{2} \sum_{i=1}^{N}k_i$
+    
+    %In a directed network the total number of links, L, 
+
+
+Average Degree: 
+    An impotent property of a network is its average degree 
+    
+    For an undirected network: 
+    $\langel k \rangle = \frac{1}{N} \sum_{i=1}^{N}k_i = \frac{2L}{N}$
+    
+    in directed network we distinguish between incoming degree $k_i^{in}$ representing the number of links that point to node i, and outgoing degree, $k_i^{out}$, representing the number of links that point from node i to other nodes. A nodes total degree, $k_i$ is given by: 
+    $k_i=k_i^{in} + k_i^{out}$
+    
+    The average degree of a directed network is: 
+    $\langel k^{in} \rangle = \frac{1}{N} \sum_{i=1}^{N}k_i^{in} = \langel k^{out}\rangle = \frac{1}{N} \sum_{i=1}^{N}k_i^{out} = \frac{L}{N}$
+
+Degree Distribution: 
+    The degree distribution, $p_k$, provides the probability that a randomly selected node in the network has degree k. Since $p_k$ is a probability, it must be normalized, i.e 
+    $\sum_{k=1}^{\infini} p_k = 1$
+    
+    for a network with N nodes the degree distribution is the normalized histogram is given by: 
+    $p_k= \frac{N_k}{N}$
+    
+    where $N_k$ is the number of degree-k nodes. Hence the number of degree-k nodes can be obtained from the degree distribution as $N_k=Np_k$. 
+
+Hub: which is the degree of the most connected node. 
+
+Real network are sparse:
+    $L=0$ $L_{max}=\frac{N}{2}=\frac{N(N-1)}{2}$ is the number of links present in a complete graph of size N. In a complete graph each node is connected to every other node. 
+    
+    We call a network sparse if $L<< L_{max}$
+
+Weighted Networks:
+    Each link (i,j) has a unique weight $w_{ij}$
+
+Bipartite Networks: 
+    A bipartite graph(or network) is a network whose nodes can be divided into two disjoint sets U and V such that each link connects a U-node to a V-node. 
+
+Paths and distances: 
+    Physical distance plays a key role in determining the interactions between the components of physical systems. 
+    In networks physical distance is replaced by path length. A path is a route that runs along the links of the network. A path's length represents the number of links the path contains. 
+
+Shortest path  
+    The shortest path between nodes i and j is the path with the fewest number of links. The shortest path is often called the distance between nodes i and j, and is denoted $d_{ij}$ or simply d. 
+    In a undirected network $d_{ij}=d_{ji}$, i.e. the distance between node i and j is the same as the distance between node i and j. In a directed network often $d_{ij} \neq d_{ji}$. Futhermore, in a directed network the existence of a path from node i to node j does not guarantee the existence of a path from i to j. BFS
+
+Pathology: 
+    Path: 
+        A sequence of nodes such that each node is connected to the next node along the path by a link. Each path consists of n+1 nodes and n links. The length of a path is the number of its links
+    Shortest Path (Geodesic Path, d):  
+        The path with the shortest distance d between two nodes. We also call d the distance between two nodes. Does not have to be unique 
+    
+    Diameter ($d_{max}$)
+        The longest shortest path in a graph.
+    Average Path Length (〈d〉)
+        The average of the shortest paths between all pairs of nodes. BFS 
+    Cycle
+        A path with the same start and end node. 
+    Eulerian Path
+        A path that traverses each link exactly once. 
+    Hamiltonian Path
+        A path that visits each node exactly once. 
+        
+
+Connectedness: 
+    The key utility of most networks: they ensure connectedness. 
+    In an undirected network nodes i and j are connected if there is a path between them. They are disconnected if such a path does not exist, in which case we have $d_{ij}=\infini $Which show a network consisting of two disconnected clusters.There are paths between any two nodes in tha same cluster, but no paths between nodes that belong to different clusters. 
+    
+    A network is connected if all pairs of nodes in the network are connected. a network is disconnected if there is least one pair with $d_{ij}= \infini $. 
+    
+    We call two sub-networks components or clusters. a component is a subset of nodes in a network, so that there is a path between ant two nodes that belong to the component, but one cannot add any more nodes to it that would have the same property. 
+    
+    If a network consists of two components, a properly placed single link can connect them, making the network connected. Such a link is called a bridge. In general a bridge is any links that, is cut, disconnects the network. BFS & ADJACENCY matrix 
+    
+Clustering Coefficient 
+The clustering coefficient captures
