@@ -17,7 +17,7 @@ Directed or undirected :
     Links of networks can be directed or undirected. Some networks have direct links if one employee sends a email to another. Some have are undirected employees that work together. 
 
 Graph: 
-    In the scientific litterateur the terms network and graph are used interchangeably. There is a subtle distinction between the two terminologies \{ network, node, link \} refers th real systems. In contrast, we use the terms \{ graph, vertex, edge\} when we discuss the mathematical representation of these networks. This distinction is rarely made, so these two terminologies are often synonyms of each other.
+    In the scientific litterateur the terms network and graph are used interchangeably. There is a subtle distinction between the two terminologies \{ network, node, link \} refers the real systems. In contrast, we use the terms \{ graph, vertex, edge\} when we discuss the mathematical representation of these networks. This distinction is rarely made, so these two terminologies are often synonyms of each other.
 
 Tools network science: 
 
@@ -121,5 +121,31 @@ Power Laws and Scale-Free Networks
 $p_{k} \ap \sim k^{-\gamma}$
     Equation is called a power law distribution and the exponent $\gamma$ is its degree exponent. if we take a logarithm, we obtain $log p_{k} \ap \sim {-\gamma}log k$
     log $p_{k}$ is expected to depend linearly on log k, the slope of this line being the degree exponent $\gamma$
+Power Law:  
+    A scale free network is a network whose degree distribution follows a power law.
+    Notwork whose degree distribution follows a power law are called scale-free networks. If a network is direct, the scale-free property applies separately to the in- and out-degrees. To mathematically study the properties of scale-free networks, we can use either the discrete or the continuum formalism. The scale-free property is independent of the formalism we use. 
     
-A scale free network is a network whose degree distribution follows a power law.
+Hubs: 
+    The main difference between a random and a scale-free network comes in the tail of the degree distribution, representing the high-k region of $p_k$. If we compare a power law with a Poisson function. we find that: 
+        For small k the power law is above the Poisson function, indicating that a scale-free network has a large number of small degree nodes, most of which are absent in a random network. 
+        For k in the vicinity of $\langle k \rangle $ Poisson distribution is above the power law, indication that in a random network there is an excess of nodes with degree k
+        For large k the power law is again above the Poisson curve. The difference is particularly visible if we show $p_k$ on a log-log plot, indication that the probability of observing a high-degree node, r hub, is several orders of magnitude higher in a scale-free than a random network. 
+        
+The Largest Hub: 
+    All real networks are finite. 
+    How does the network size affect the size of its hubs?
+        to answer this we calculate the maximum degree, $k_{max}$, called the natural cutoff of the degree distribution $p_k$. It represents the expected size of the largest hub in a network. 
+        
+    In summary the key difference between a random and a scale-free network is rooted in the different shape of the poisson and of the power-law: in a random network most nodes have comparable degrees and hence hubs are forbidden. Hubs are not only tolerated, but are expected in scale-free networks. Futhermore, the more bodes a scalefree network has, the larger are its hubs. Indeed, the size of the hubs grows polynomially with the network size, hence they can grow quite large in scalefree networks. In contrast in a random network the size of the largest node grows logarithmically or slower with N, implying that hubs will be tiny even in a very large random network. 
+    
+    In summary, the scale-free name caputres the lack of an internal scale, a consequence of the fact that nodes with different degrees coexist in the same network. This feature distinguishes scale-free networks from lattices, in which all nodes have exactly the same degree, or from random networks, whose degree vary in a narrow range. As we will see in the coming chapters, this divergence is the origian of some of the most intriguing properties of scale-free networks, from their robustness to random failures to the anomalous spread of viruses. 
+    
+Scale-free property has several effects on networks distances: 
+    Shrinking the average path lengths. Therefore most scale-free networks of practical interest are not only "small", but are "ultra-small". This is a consequence of the hubs, that act as bridges between many small degree nodes. 
+    Changes the dependence of $\langle d \rangle$ on the systems size. The smaller is $\gamma$, teh shorter are the distances between the nodes. 
+    Only for $\gamma> 3$ we recover the lnN dependence, the signature of the small-world property characterizing random networks. 
+    
+The role of the degree exponent: 
+Anomalous Regime $\gamma<= 2$
+Scale-free Regime $ 2< \gamma< 3$
+Random Network regime  $\gamma>3$
